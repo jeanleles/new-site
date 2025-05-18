@@ -13,7 +13,7 @@ export const metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="pt-BR" suppressHydrationWarning>
-      <body className="min-h-screen font-sans">
+      <body className="min-h-screen font-sans bg-background dark:bg-foreground text-gray-900 dark:text-gray-100 transition-colors duration-300">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Header />
           <main className="w-full max-w-[768px] mx-auto px-4 py-8">
