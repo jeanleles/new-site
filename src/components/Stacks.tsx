@@ -31,14 +31,15 @@ export default function Staks() {
         {staks.map((stak) => (
           <div
             key={stak.name}
-            className="group flex gap-2 items-center justify-center px-4 py-3 bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded-xl shadow-md transition-all duration-300 hover:border-[#00DF89]"
+            className="group flex gap-2 items-center justify-center px-4 py-3 bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded-xl shadow-md transition-all duration-300"
           >
-            <div className="relative w-6 h-6 transition-transform duration-300 group-hover:scale-110">
+            <div className="relative w-6 h-6">
               <Image
                 src={stak.logo}
                 alt={stak.name}
-                fill
-                style={{ objectFit: 'contain' }}
+                width={24}
+                height={24}
+                className="object-contain"
               />
             </div>
             <p className="text-center text-sm text-gray-800 dark:text-gray-200">

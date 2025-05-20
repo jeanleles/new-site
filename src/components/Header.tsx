@@ -36,7 +36,7 @@ export default function Header() {
           </a>
           <a href="https://twitter.com/jeanleles" target="_blank" rel="noopener noreferrer" aria-label="Twitter/X">
             <FaXTwitter />
-          </a>          
+          </a>
         </div>
       </div>
 

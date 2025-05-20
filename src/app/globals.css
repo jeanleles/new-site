@@ -1,54 +1,48 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --highlight: #00df89;
+  --background: 255, 255, 255;
+  --foreground: 23, 23, 23;
+  --highlight: 0, 223, 137;
 }
 
 .dark {
-  --background: #0a0a0a;
-  --foreground: #ededed;
-  --highlight: #15f59f;
+  --background: 10, 10, 10;
+  --foreground: 237, 237, 237;
+  --highlight: 21, 245, 159;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  body {
+    background-color: rgb(var(--background));
+    color: rgb(var(--foreground));
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  transition: background-color 0.3s, color 0.3s;
-  font-family: Arial, Helvetica, sans-serif;
+nav a:hover {
+  color: rgb(var(--highlight));
+  text-decoration: underline;
+  text-decoration-color: rgb(var(--highlight));
+  text-decoration-thickness: 2px;
+  text-underline-offset: 2px;
+  text-underline-position: under;
+  transition: color 0.3s, text-decoration-color 0.3s;
 }
-
-/* body {
-  background-color: #ffffff; 
-  color: #171717;
-}
-
-.dark body {
-  background-color: #0a0a0a; 
-  color: #ededed; 
-}
- */
 
 @keyframes slideIn {
   0% {
     opacity: 0;
     transform: translateX(50%);
   }
+
   100% {
     opacity: 1;
     transform: translateX(0);
@@ -57,17 +51,6 @@ body {
 
 .animate-slideIn {
   animation: slideIn 0.3s ease-out forwards;
-}
-
-@keyframes slideIn {
-  0% {
-    opacity: 0;
-    transform: translateX(50%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
 }
 
 @keyframes slideOut {
@@ -75,14 +58,11 @@ body {
     opacity: 1;
     transform: translateX(0);
   }
+
   100% {
     opacity: 0;
     transform: translateX(50%);
   }
-}
-
-.animate-slideIn {
-  animation: slideIn 0.3s ease-out forwards;
 }
 
 .animate-slideOut {
