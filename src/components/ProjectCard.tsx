@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { FiExternalLink } from 'react-icons/fi';
 
 interface ProjectCardProps {
   titulo: string;
@@ -32,16 +33,20 @@ export default function ProjectCard({
         <Link
           href={demo}
           target="_blank"
-          className="px-4 py-2 rounded-md border border-highlight text-highlight font-medium hover:bg-highlight hover:text-white transition"
+          rel="noopener noreferrer"
+          className="px-4 py-2 rounded-md border border-blue-500 text-blue-500 font-medium hover:bg-blue-500 hover:text-white transition flex items-center gap-2"
         >
           Demo
+          <FiExternalLink className="w-4 h-4" />
         </Link>
         <Link
           href={github}
           target="_blank"
-          className="px-4 py-2 rounded-md border border-highlight text-highlight font-medium hover:bg-highlight hover:text-white transition"
+          rel="noopener noreferrer"
+          className="px-4 py-2 rounded-md border border-blue-500 text-blue-500 font-medium hover:bg-blue-500 hover:text-white transition flex items-center gap-2"
         >
           Github
+          <FiExternalLink className="w-4 h-4" />
         </Link>
       </div>
     </div>

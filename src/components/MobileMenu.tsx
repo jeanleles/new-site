@@ -42,6 +42,12 @@ export default function MobileMenu() {
     };
   }, []);
 
+  useEffect(() => {
+    if (!shouldShowButton) {
+      setShowMenu(false);
+    }
+  }, [shouldShowButton]);
+
   return (
     <div className="fixed top-4 left-1/2 transform -translate-x-1/2 w-full max-w-[768px] z-50 px-4">
       <div className="relative flex justify-end">
@@ -80,22 +86,38 @@ export default function MobileMenu() {
               className="absolute top-12 right-0 w-[200px] bg-white dark:bg-gray-900 shadow-lg rounded-lg border border-gray-200 dark:border-gray-700 z-50"
             >
               <ul className="flex flex-col p-4 gap-4 text-gray-800 dark:text-gray-200" role="menu">
-                <li role="menuitem" onClick={() => setShowMenu(false)}><Link href="/">Home</Link></li>
-                <li role="menuitem" onClick={() => setShowMenu(false)}><Link href="/about">Sobre</Link></li>
-                <li role="menuitem" onClick={() => setShowMenu(false)}><Link href="/projects">Projetos</Link></li>
-                <li role="menuitem" onClick={() => setShowMenu(false)}><Link href="/blog">Blog</Link></li>
+                <li role="menuitem" onClick={() => setShowMenu(false)}>
+                  <Link href="/" className="block px-2 py-1 -mx-2 -my-1 rounded-md hover:text-blue-500 hover:underline hover:decoration-2 hover:underline-offset-2 hover:decoration-blue-500 transition-colors">
+                    Home
+                  </Link>
+                </li>
+                <li role="menuitem" onClick={() => setShowMenu(false)}>
+                  <Link href="/about" className="block px-2 py-1 -mx-2 -my-1 rounded-md hover:text-blue-500 hover:underline hover:decoration-2 hover:underline-offset-2 hover:decoration-blue-500 transition-colors">
+                    Sobre
+                  </Link>
+                </li>
+                <li role="menuitem" onClick={() => setShowMenu(false)}>
+                  <Link href="/projects" className="block px-2 py-1 -mx-2 -my-1 rounded-md hover:text-blue-500 hover:underline hover:decoration-2 hover:underline-offset-2 hover:decoration-blue-500 transition-colors">
+                    Projetos
+                  </Link>
+                </li>
+                <li role="menuitem" onClick={() => setShowMenu(false)}>
+                  <Link href="/blog" className="block px-2 py-1 -mx-2 -my-1 rounded-md hover:text-blue-500 hover:underline hover:decoration-2 hover:underline-offset-2 hover:decoration-blue-500 transition-colors">
+                    Blog
+                  </Link>
+                </li>
               </ul>
 
               <hr className="border-gray-300 dark:border-gray-700 mx-4" />
 
               <div className="flex justify-center gap-4 py-3 text-xl text-gray-600 dark:text-gray-300">
-                <a href="https://linkedin.com/in/jeanleles" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <a href="https://linkedin.com/in/jeanleles" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:text-blue-500 transition-colors">
                   <FaLinkedin />
                 </a>
-                <a href="https://github.com/jeanleles" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <a href="https://github.com/jeanleles" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="hover:text-blue-500 transition-colors">
                   <FaGithub />
                 </a>
-                <a href="https://twitter.com/jeanleles" target="_blank" rel="noopener noreferrer" aria-label="Twitter/X">
+                <a href="https://twitter.com/jeanleles" target="_blank" rel="noopener noreferrer" aria-label="Twitter/X" className="hover:text-blue-500 transition-colors">
                   <FaXTwitter />
                 </a>
               </div>

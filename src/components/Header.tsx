@@ -44,12 +44,8 @@ export default function Header() {
 
       <nav className="flex items-center justify-between transition-all duration-300">
         <div className="flex items-center gap-4">
-          <ul className="flex gap-6 text-gray-700 dark:text-gray-300 text-sm">
-            <li>
-              <Link href="/" className="text-gray-700 dark:text-gray-300 hover:text-highlight transition-colors">
-                Home
-              </Link>
-            </li>
+          <ul className="flex gap-6 text-gray-700 dark:text-gray-300 text-md">
+            <li><Link href="/">Home</Link></li>
             <li><Link href="/about">Sobre</Link></li>
             <li><Link href="/projects">Projetos</Link></li>
             <li><Link href="/blog">Blog</Link></li>

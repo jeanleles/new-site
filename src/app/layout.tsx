@@ -20,7 +20,7 @@ export const metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="pt-BR" suppressHydrationWarning className={inter.variable}>
-      <body className="min-h-screen font-sans">
+      <body className="min-h-screen font-sans" cz-shortcut-listen="true">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
             <Header />

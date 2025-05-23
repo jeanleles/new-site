@@ -47,7 +47,7 @@ export default function RecentPosts() {
       <div className="mt-6">
         <a
           href="/blog"
-          className="text-highlight font-semibold hover:underline"
+          className="text-blue-600 font-semibold hover:text-blue-500 hover:underline hover:decoration-2 hover:underline-offset-2 hover:decoration-blue-500 transition-colors"
         >
           Ver mais posts
         </a>
